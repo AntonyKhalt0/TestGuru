@@ -1,5 +1,5 @@
 class ChangeColumnNullInCategories < ActiveRecord::Migration[6.0]
   def change
-    change_column_null :categories, :title, true
+    change_column_null :categories, :title, false
   end
 end
