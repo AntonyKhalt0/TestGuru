@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration[6.0]
     create_table :categories do |t|
       t.string :title, null: false
 
-      t.timestamps  
+      t.timestamps 
     end
   end
 end
