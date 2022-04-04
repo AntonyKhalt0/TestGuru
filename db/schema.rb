@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2022_04_04_181649) do
 
   create_table "results", force: :cascade do |t|
     t.integer "number_quetions", null: false
-    t.integer "number_correct_answers"
-    t.boolean "in_progress", null: false
-    t.boolean "passed", null: false
+    t.integer "number_correct_answers", default: 0, null: false
+    t.boolean "in_progress", default: false, null: false
+    t.boolean "passed", default: false, null: false
     t.bigint "user_id", null: false
     t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false

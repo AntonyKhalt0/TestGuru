@@ -55,3 +55,26 @@ Answer.create!(body: "Да", question_id: 4)
 Answer.create!(body: "1964 год", correct: true, question_id: 4)
 Answer.create!(body: "День сурка", question_id: 4)
 Answer.create!(body: "Полет на воздушном шаре под водой", question_id: 4)
+
+Result.create!(number_quetions: 1, 
+        number_correct_answers: 1,
+        in_progress: true, 
+        user_id: 1,
+        test_id: 1)
+Result.create!(number_quetions: 1,
+        passed: true, 
+        user_id: 3,
+        test_id: 4)
+Result.create!(number_quetions: 1, 
+        number_correct_answers: 1,
+        passed: true, 
+        user_id: 1,
+        test_id: 2)
+Result.create!(number_quetions: 1,
+        in_progress: true, 
+        user_id: 6,
+        test_id: 3)
+Result.create!(number_quetions: 1,
+        passed: true,
+        user_id: 7,
+        test_id: 1)
