@@ -1,9 +1,7 @@
 class User < ApplicationRecord
   def test_history_with_level(level)
-    user_id = self.id
-    results = Result.where(user_id: user_id)
-    tests_id = []
-    results.each { |result| tests_id.push(result.test_id) }
-    tests = Test.where(id: tests_id, level: level)
+    @id = self.id
+    Test.joins("INNER JOIN results ON results.test_id = tests.id", "INNER JOIN users ON results.user_id = users.id").
+          where(level: level).where(users: { id: @id })
   end
 end
