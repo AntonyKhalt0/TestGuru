@@ -6,75 +6,93 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |n|
-  name = "Example User #{n+1}"
-  email = "example-#{n+1}@railstutorial.org"
-  User.create!(name: name, email: email)
-end
+users = User.create!([
+  { name: Faker::Name.name, email: "example_1@example.org" },
+  { name: Faker::Name.name, email: "example_2@example.org" }, 
+  { name: Faker::Name.name, email: "example_3@example.org" },
+  { name: Faker::Name.name, email: "example_4@example.org" },
+  { name: Faker::Name.name, email: "example_5@example.org" }
+])
 
-Category.create!(title: "Programming language")
-Category.create!(title: "Psychological")
-Category.create!(title: "Humorous")
+categories = Category.create!([
+  { title: "Programming language" },
+  { title: "Psychological" },
+  { title: "Humorous"}
+])
 
-Test.create!(title: "Ruby", 
-        level: 2, 
-        category_id: 1,
-        author_id: 2)
-Test.create!(title: "Java", 
-        level: 3, 
-        category_id: 1,
-        author_id: 2)
-Test.create!(title: "Extroversion", 
-        category_id: 2,
-        author_id: 4)
-Test.create!(title: "Historic", 
-        category_id: 3,
-        author_id: 5)
+tests = Test.create!([
+  { title: "Ruby", 
+    level: 2, 
+    category_id: categories[0].id,
+    author_id: users[1].id },
+  { title: "Java", 
+    level: 3, 
+    category_id: categories[0].id,
+    author_id: users[1].id },
+  { title: "Extroversion", 
+    category_id: categories[1].id,
+    author_id: users[3].id },
+  { title: "Historic", 
+    category_id: categories[2].id,
+    author_id: users[4].id }
+])
 
-Question.create!(body: "Какая команда позволяет найти установленную версию Ruby?", test_id: 1)
-Question.create!(body: "Что такое Local Variable?", test_id: 2)
-Question.create!(body: "Вы интроверт?", test_id: 3)
-Question.create!(body: "Что закончилось в 1965 году?", test_id: 4)
+questions = Question.create!([ 
+  { body: "Какая команда позволяет найти установленную версию Ruby?", test_id: tests[0].id },
+  { body: "Что такое Local Variable?", test_id: tests[1].id },
+  { body: "Вы интроверт?", test_id: tests[2].id },
+  { body: "Что закончилось в 1965 году?", test_id: tests[3].id }
+])
 
-Answer.create!(body: "ruby -v", correct: true, question_id: 1)
-Answer.create!(body: "ruby -b", question_id: 1)
-Answer.create!(body: "ruby -d", question_id: 1)
-Answer.create!(body: "ruby -s", question_id: 1)
+answers_for_first_test = Answer.create!([ 
+  { body: "ruby -v", correct: true, question_id: questions[0].id },
+  { body: "ruby -b", question_id: questions[0].id },
+  { body: "ruby -d", question_id: questions[0].id },
+  { body: "ruby -s", question_id: questions[0].id }
+])
 
-Answer.create!(body: "Глобальная переменная", question_id: 2)
-Answer.create!(body: "Инстанс переменная", question_id: 2)
-Answer.create!(body: "Локальная переменная", correct: true, question_id: 2)
-Answer.create!(body: "Переменная класса", question_id: 2)
+answers_for_second_test = Answer.create!([ 
+  { body: "Глобальная переменная", question_id: questions[1].id },
+  { body: "Инстанс переменная", question_id: questions[1].id },
+  { body: "Локальная переменная", correct: true, question_id: questions[1].id },
+  { body: "Переменная класса", question_id: questions[1].id } 
+])
 
-Answer.create!(body: "Да", question_id: 3)
-Answer.create!(body: "Может быть", question_id: 3)
-Answer.create!(body: "Скорее нет", question_id: 3)
-Answer.create!(body: "Нет", correct: true, question_id: 3)
+answers_for_third_test = Answer.create!([ 
+  { body: "Да", question_id: questions[2].id },
+  { body: "Может быть", question_id: questions[2].id },
+  { body: "Скорее нет", question_id: questions[2].id },
+  { body: "Нет", correct: true, question_id: questions[2].id }
+])
 
-Answer.create!(body: "Да", question_id: 4)
-Answer.create!(body: "1964 год", correct: true, question_id: 4)
-Answer.create!(body: "День сурка", question_id: 4)
-Answer.create!(body: "Полет на воздушном шаре под водой", question_id: 4)
+answers_for_fourth = Answer.create!([ 
+  { body: "Да", question_id: questions[3].id },
+  { body: "1964 год", correct: true, question_id: questions[3].id },
+  { body: "День сурка", question_id: questions[3].id },
+  { body: "Полет на воздушном шаре под водой", question_id: questions[3].id }
+])
 
-Result.create!(number_quetions: 1, 
-        number_correct_answers: 1,
-        in_progress: true, 
-        user_id: 1,
-        test_id: 1)
-Result.create!(number_quetions: 1,
-        passed: true, 
-        user_id: 3,
-        test_id: 4)
-Result.create!(number_quetions: 1, 
-        number_correct_answers: 1,
-        passed: true, 
-        user_id: 1,
-        test_id: 2)
-Result.create!(number_quetions: 1,
-        in_progress: true, 
-        user_id: 6,
-        test_id: 3)
-Result.create!(number_quetions: 1,
-        passed: true,
-        user_id: 7,
-        test_id: 1)
+Result.create!([ 
+  { number_quetions: 1, 
+    number_correct_answers: 1,
+    in_progress: true, 
+    user_id: users[0].id,
+    test_id: tests[0].id },
+  { number_quetions: 1,
+    passed: true, 
+    user_id: users[2].id,
+    test_id: tests[3].id },
+  { number_quetions: 1, 
+    number_correct_answers: 1,
+    passed: true, 
+    user_id: users[1].id,
+    test_id: tests[1].id },
+  { number_quetions: 1,
+    in_progress: true, 
+    user_id: users[3].id,
+    test_id: tests[2].id },
+  { number_quetions: 1,
+    passed: true,
+    user_id: users[4].id,
+    test_id: tests[0].id }
+])
