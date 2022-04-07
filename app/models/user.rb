@@ -1,11 +1,9 @@
 class User < ApplicationRecord
-  has_many :tests
-  has_many :results
-  has_many :tests, through: :results
+  has_many :created_tests, class_name: "Test", foreign_key: "author_id", dependent: :nullify
+  has_many :results, dependent: :delete_all
+  has_many :tests, through: :results, dependent: :nullify
   
   def test_history_with_level(level)
-    Test.joins("INNER JOIN results ON results.test_id = tests.id", "INNER JOIN users ON results.user_id = users.id")
-        .where(level: level)
-        .where(users: { id: id })
+    tests.where(level: level)
   end
 end
