@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: "User", foreign_key: "author_id"
 
   has_many :results, dependent: :nullify
-  has_many :users, through: :results, dependent: :nullify
+  has_many :users, through: :results
   has_many :questions, dependent: :destroy
 
   class << self
