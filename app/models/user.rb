@@ -3,7 +3,11 @@ class User < ApplicationRecord
   has_many :results, dependent: :delete_all
   has_many :tests, through: :results
   
-  def test_history_with_level(level)
-    tests.where(level: level)
+  def test_history_by_complexity(complexity)
+    case complexity
+    when "simple" then tests.simple_level
+    when "intermediate" then tests.intermediate_level
+    when "difficult" then tests.difficult_level
+    end
   end
 end
