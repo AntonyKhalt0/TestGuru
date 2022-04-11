@@ -23,76 +23,76 @@ categories = Category.create!([
 tests = Test.create!([
   { title: "Ruby", 
     level: 2, 
-    category_id: categories[0].id,
-    author_id: users[1].id },
+    category: categories[0],
+    author: users[1] },
   { title: "Java", 
     level: 3, 
-    category_id: categories[0].id,
-    author_id: users[1].id },
+    category: categories[0],
+    author: users[1] },
   { title: "Extroversion", 
-    category_id: categories[1].id,
-    author_id: users[3].id },
+    category: categories[1],
+    author: users[3] },
   { title: "Historic", 
-    category_id: categories[2].id,
-    author_id: users[4].id }
+    category: categories[2],
+    author: users[4] }
 ])
 
 questions = Question.create!([ 
-  { body: "Какая команда позволяет найти установленную версию Ruby?", test_id: tests[0].id },
-  { body: "Что такое Local Variable?", test_id: tests[1].id },
-  { body: "Вы интроверт?", test_id: tests[2].id },
-  { body: "Что закончилось в 1965 году?", test_id: tests[3].id }
+  { body: "Какая команда позволяет найти установленную версию Ruby?", test: tests[0] },
+  { body: "Что такое Local Variable?", test: tests[1] },
+  { body: "Вы интроверт?", test: tests[2] },
+  { body: "Что закончилось в 1965 году?", test: tests[3] }
 ])
 
 answers_for_first_test = Answer.create!([ 
-  { body: "ruby -v", correct: true, question_id: questions[0].id },
-  { body: "ruby -b", question_id: questions[0].id },
-  { body: "ruby -d", question_id: questions[0].id },
-  { body: "ruby -s", question_id: questions[0].id }
+  { body: "ruby -v", correct: true, question: questions[0] },
+  { body: "ruby -b", question: questions[0] },
+  { body: "ruby -d", question: questions[0] },
+  { body: "ruby -s", question: questions[0] }
 ])
 
 answers_for_second_test = Answer.create!([ 
-  { body: "Глобальная переменная", question_id: questions[1].id },
-  { body: "Инстанс переменная", question_id: questions[1].id },
-  { body: "Локальная переменная", correct: true, question_id: questions[1].id },
-  { body: "Переменная класса", question_id: questions[1].id } 
+  { body: "Глобальная переменная", question: questions[1] },
+  { body: "Инстанс переменная", question: questions[1] },
+  { body: "Локальная переменная", correct: true, question: questions[1] },
+  { body: "Переменная класса", question: questions[1] } 
 ])
 
 answers_for_third_test = Answer.create!([ 
-  { body: "Да", question_id: questions[2].id },
-  { body: "Может быть", question_id: questions[2].id },
-  { body: "Скорее нет", question_id: questions[2].id },
-  { body: "Нет", correct: true, question_id: questions[2].id }
+  { body: "Да", question: questions[2] },
+  { body: "Может быть", question: questions[2] },
+  { body: "Скорее нет", question: questions[2] },
+  { body: "Нет", correct: true, question: questions[2] }
 ])
 
 answers_for_fourth = Answer.create!([ 
-  { body: "Да", question_id: questions[3].id },
-  { body: "1964 год", correct: true, question_id: questions[3].id },
-  { body: "День сурка", question_id: questions[3].id },
-  { body: "Полет на воздушном шаре под водой", question_id: questions[3].id }
+  { body: "Да", question: questions[3] },
+  { body: "1964 год", correct: true, question: questions[3] },
+  { body: "День сурка", question: questions[3] },
+  { body: "Полет на воздушном шаре под водой", question: questions[3] }
 ])
 
 Result.create!([ 
   { number_quetions: 1, 
     number_correct_answers: 1,
     in_progress: true, 
-    user_id: users[0].id,
-    test_id: tests[0].id },
+    user: users[0],
+    test: tests[0] },
   { number_quetions: 1,
     passed: true, 
-    user_id: users[2].id,
-    test_id: tests[3].id },
+    user: users[2],
+    test: tests[3] },
   { number_quetions: 1, 
     number_correct_answers: 1,
     passed: true, 
-    user_id: users[1].id,
-    test_id: tests[1].id },
+    user: users[1],
+    test: tests[1] },
   { number_quetions: 1,
     in_progress: true, 
-    user_id: users[3].id,
-    test_id: tests[2].id },
+    user: users[3],
+    test: tests[2] },
   { number_quetions: 1,
     passed: true,
-    user_id: users[4].id,
-    test_id: tests[0].id }
+    user: users[4],
+    test: tests[0] }
 ])
