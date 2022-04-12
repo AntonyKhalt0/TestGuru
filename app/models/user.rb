@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   def test_history_by_complexity(complexity)
-    tests.send(complexity)
+    tests.send(complexity) if %w[simple intermediate difficult].include? complexity
   end
 end
