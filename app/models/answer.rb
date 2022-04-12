@@ -1,9 +1,22 @@
 # frozen_string_literal: true
 
 class Answer < ApplicationRecord
+  MIN_ANSWERS = 0
+  MAX_ANSWERS = 4
+
   belongs_to :question
 
-  scope :correct_answers, -> { where(correct: true) }
-
   validates :body, presence: true
+  validate :validate_number_answers, on: :create
+
+  scope :correct, -> { where(correct: true) }
+
+  private
+
+  def validate_number_answers
+    if (MIN_ANSWERS...MAX_ANSWERS).exclude? question.answers.length
+      errors.add(:question,
+                 message: 'the number of responses does not correspond to reality')
+    end
+  end
 end

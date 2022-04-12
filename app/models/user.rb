@@ -8,10 +8,6 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   def test_history_by_complexity(complexity)
-    case complexity
-    when 'simple' then tests.simple_level
-    when 'intermediate' then tests.intermediate_level
-    when 'difficult' then tests.difficult_level
-    end
+    tests.send(complexity)
   end
 end
