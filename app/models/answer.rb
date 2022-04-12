@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Answer < ApplicationRecord
-  MIN_ANSWERS = 0
-  MAX_ANSWERS = 4
+  MAX_COUNT_ANSWERS = 4
 
   belongs_to :question
 
@@ -14,7 +13,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_number_answers
-    if (MIN_ANSWERS...MAX_ANSWERS).exclude? question.answers.length
+    if question.answers.count >= MAX_COUNT_ANSWERS
       errors.add(:question,
                  message: 'the number of responses does not correspond to reality')
     end
