@@ -1,10 +1,21 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
+  MINIMAL_VALUE = 0
+
   belongs_to :category
-  belongs_to :author, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   has_many :results, dependent: :delete_all
   has_many :users, through: :results
   has_many :questions, dependent: :destroy
+
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: MINIMAL_VALUE }
+
+  scope :simple, -> { where(level: 0..1) }
+  scope :intermediate, -> { where(level: 2..4) }
+  scope :difficult, -> { where(level: 5..Float::INFINITY) }
 
   class << self
     def test_names_in_descending_order(category_name)
