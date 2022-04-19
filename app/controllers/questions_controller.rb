@@ -9,8 +9,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @questionss = Question.find(params[:id])
-    render plain: @questionss.inspect
+    @question = Question.find(params[:id])
+    render plain: @question.inspect
   end
 
   def create
