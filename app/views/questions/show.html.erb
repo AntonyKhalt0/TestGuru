@@ -4,7 +4,6 @@
   <%= f.label @question.body %><br>
   <%= f.label @question.test_id %><br>
 
-  <%= link_to "Удалить вопрос?", question_path(@question), 
-                                 method: :delete, 
-                                 data: { confirm: "Are you sure&" } %>
+  <%= link_to "Редактировать вопрос", edit_question_path(@question) %><br>
+  <%= link_to "Назад", test_questions_path(@test) %><br>
 <% end %>
