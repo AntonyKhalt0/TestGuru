@@ -1,6 +1,6 @@
-<h3>Create New Question</h3>
+<h3>Edit question</h3>
 
-<%= form_with model: @question, url: test_questions_path do |form| %>
+<%= form_with model: @question, url: question_path, method: :put do |form| %>
   <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :body %><br>

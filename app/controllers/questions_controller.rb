@@ -1,31 +1,44 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :create]
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_test, only: [:index, :new, :create, :update]
+  before_action :find_question, only: [:show, :edit, :update, :destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @questions = find_questions
-    render json: { questions: @questions }
   end
 
   def show
-    find_question
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to test_questions_path(@test)
+    else 
+      render :show
+    end
+  end
+
+  def new
+    @question = Question.new
   end
 
   def create
     @question = find_questions.build(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to test_questions_path(@test)
     else 
       render :new
     end
   end
 
   def destroy
-    find_question
+    @test = Test.find(@question.test_id)
     @question.destroy
-    render plain: "Question delete!"
+    redirect_to test_questions_path(@test)
   end
 
   private
@@ -43,7 +56,7 @@ class QuestionsController < ApplicationController
   end
   
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, :test_id)
   end
 
   def rescue_with_question_not_found

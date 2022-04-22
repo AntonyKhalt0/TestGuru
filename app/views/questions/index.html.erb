@@ -1,0 +1,14 @@
+<%= form_with models: [@test, @questions], url: test_questions_path do |form| %>
+  <h3>Test:</h3> 
+  <%= @test.title %>
+
+  <h4>Questions:</h4>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Body</th>
+    </tr>
+    <%= render @questions %>
+  </table>
+
+<% end %>

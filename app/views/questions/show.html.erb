@@ -1,8 +1,10 @@
-<h3>Create New Question</h3>
+<h3>Question</h3>
 
-<%= form_for @question, url: question_path do |f| %>
+<%= form_with model: @question, url: question_path do |f| %>
   <%= f.label @question.body %><br>
   <%= f.label @question.test_id %><br>
 
-  <%= link_to "Удалить вопрос?", @question, method: :delete %>
+  <%= link_to "Удалить вопрос?", question_path(@question), 
+                                 method: :delete, 
+                                 data: { confirm: "Are you sure&" } %>
 <% end %>
