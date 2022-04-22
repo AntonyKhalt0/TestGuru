@@ -1,6 +1,6 @@
-<%= form_with models: [@test, @questions], url: test_questions_path do |form| %>
+<%= form_with model: [@test, @questions], url: test_questions_path do |form| %>
   <h3>Test:</h3> 
-  <%= @test.title %>
+  <%= question_header(@test) %>
 
   <h4>Questions:</h4>
   <table>
