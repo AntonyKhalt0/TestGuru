@@ -1,4 +1,4 @@
-<h3>Edit question</h3>
+<h3>Edit <%= question_header(@test) %> Question</h3>
 
 <%= form_with model: @question, url: question_path, method: :put do |form| %>
   <%= render 'shared/errors', resource: @question %>

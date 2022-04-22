@@ -1,4 +1,4 @@
-<h3>Create New Question</h3>
+<h3>Create New <%= question_header(@test) %>  Question</h3>
 
 <%= form_with model: @question, url: test_questions_path do |form| %>
   <%= render 'shared/errors', resource: @question %>
