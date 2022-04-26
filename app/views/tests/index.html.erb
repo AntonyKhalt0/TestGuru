@@ -1,12 +1,10 @@
-<%= form_with model: @tests, url: tests_path do |form| %>
-  <h3>Tests:</h3> 
-  <table>
+<h3>Tests:</h3>
+<table>
     <tr>
       <th>Title</th>
       <th>Level</th>
-      <th>Question count</th>
+      <th>Questions count</th>
     </tr>
     <%= render @tests %>
-  </table>
-
-<% end %>
+</table>
+<%= link_to "Создать test", new_test_path %>

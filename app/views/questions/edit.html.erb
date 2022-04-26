@@ -1,14 +1,6 @@
-<h3>Edit <%= question_header(@test) %> Question</h3>
+<h3>Edit <%= question_header(@question.test) %> Question</h3>
 
-<%= form_with model: @question, url: question_path, method: :put do |form| %>
-  <%= render 'shared/errors', resource: @question %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_field :body, id: :question_body %><br>  
-  </p>
+<%= render 'form' %>
 
-  <p><%= form.submit %></p><br>
-  
-  <p><%= link_to "Назад", test_questions_path(@test) %></p>
-<% end %>
-
+<br>  
+<p><%= link_to "Назад", test_questions_path(@question.test) %></p>

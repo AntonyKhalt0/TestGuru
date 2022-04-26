@@ -1,20 +1,16 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :create]
+  before_action :find_test, only: [:new, :create]
   before_action :find_question, only: [:show, :edit, :update, :destroy]
-  before_action :find_test_by_question, only: [:show, :edit, :update, :destroy]
+  #before_action :finquestion, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
-  def index
-    @questions = find_questions
-  end
 
   def new
     @question = Question.new
   end
 
   def create
-    @question = find_questions.build(question_params)
+    @question.build(question_params)
     if @question.save
       redirect_to test_questions_path(@test)
     else 
@@ -41,20 +37,16 @@ class QuestionsController < ApplicationController
     @test = Test.find(params[:test_id])
   end
 
-  def find_test_by_question
-    @test = Test.find(@question.test_id)
-  end
+  #def find_test_by_question
+  #  @test = @question.test
+  #end
 
   def find_question
     @question = Question.find(params[:id])
   end
 
-  def find_questions
-    @test.questions
-  end
-  
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found

@@ -1,12 +1,3 @@
 <h3>Create New <%= question_header(@test) %>  Question</h3>
 
-<%= form_with model: @question, url: test_questions_path do |form| %>
-  <%= render 'shared/errors', resource: @question %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_field :body, id: :question_body %><br>  
-  </p>
-
-  <p><%= form.submit %></p>
-<% end %>
-
+<%= render 'form' %>

@@ -1,9 +1,10 @@
 <h3>Question</h3>
 
-<%= form_with model: @question, url: question_path do |f| %>
-  <%= f.label @question.body %><br>
-  <%= f.label @question.test_id %><br>
+<p>Body:</p>
+<p><%= @question.body %></p>
 
-  <%= link_to "Редактировать вопрос", edit_question_path(@question) %><br>
-  <%= link_to "Назад", test_questions_path(@test) %><br>
-<% end %>
+<p>Test:</p>
+<p><%= @question.test.title %></p>
+
+<%= link_to "Редактировать вопрос", edit_question_path(@question) %><br>
+<%= link_to "Назад", test_questions_path(@question.test) %><br>
