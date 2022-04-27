@@ -1,21 +1,3 @@
 <h3>Create New Test</h3>
 
-<%= form_with model: @test do |form| %>
-  <%= render 'shared/errors', resource: @test %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :title_id %>
-  </p>
-
-  <p>
-    <%= form.label :level %><br>
-    <%= form.number_field :level, id: :level_id %>
-  </p>
-  
-  <p>
-    <%= form.label :category_id %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-  </p>
-
-  <p><%= form.submit %></p>
-<%= end %>
+<%= render 'form' %>
