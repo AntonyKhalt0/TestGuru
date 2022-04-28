@@ -5,5 +5,9 @@
       <%= form.text_field :body, id: :question_body %><br>  
   </p>
 
+  <p>
+    <%= form.hidden_field :test_id, value: params[:test_id]  %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>
