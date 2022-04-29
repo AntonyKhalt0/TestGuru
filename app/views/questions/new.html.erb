@@ -1,6 +1,3 @@
-<h3>Create New Question</h3>
+<h3><%= question_header(@test, "create") %></h3>
 
-<%= form_for @question, url: test_questions_path do |f| %>
-  <%= f.text_field :body %><br>
-  <%= f.submit "Создать вопрос" %>
-<% end %>
+<%= render 'form' %>

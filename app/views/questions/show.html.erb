@@ -1,8 +1,10 @@
-<h3>Create New Question</h3>
+<h3>Question</h3>
 
-<%= form_for @question, url: question_path do |f| %>
-  <%= f.label @question.body %><br>
-  <%= f.label @question.test_id %><br>
+<p>Body:</p>
+<p><%= @question.body %></p>
 
-  <%= link_to "Удалить вопрос?", @question, method: :delete %>
-<% end %>
+<p>Test:</p>
+<p><%= @question.test.title %></p>
+
+<%= link_to "Редактировать вопрос", edit_question_path(@question) %><br>
+<%= link_to "Назад", test_path(@question.test) %><br>
