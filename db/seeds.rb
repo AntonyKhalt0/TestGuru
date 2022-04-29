@@ -40,10 +40,10 @@ tests = Test.create!([
                      ])
 
 questions = Question.create!([
-                               { body: 'Какая команда позволяет найти установленную версию Ruby?', test: tests[0] },
-                               { body: 'Что такое Local Variable?', test: tests[1] },
-                               { body: 'Вы интроверт?', test: tests[2] },
-                               { body: 'Что закончилось в 1965 году?', test: tests[3] }
+                               { body: 'How command show ruby version?', test: tests[0] },
+                               { body: 'What is Local Variable?', test: tests[1] },
+                               { body: 'You introvert?', test: tests[2] },
+                               { body: 'What happened in 1965 year?', test: tests[3] }
                              ])
 
 answers_for_first_test = Answer.create!([
@@ -54,27 +54,27 @@ answers_for_first_test = Answer.create!([
                                         ])
 
 answers_for_second_test = Answer.create!([
-                                           { body: 'Глобальная переменная', question: questions[1] },
-                                           { body: 'Инстанс переменная', question: questions[1] },
-                                           { body: 'Локальная переменная', correct: true, question: questions[1] },
-                                           { body: 'Переменная класса', question: questions[1] }
+                                           { body: 'Global variable', question: questions[1] },
+                                           { body: 'Instans variable', question: questions[1] },
+                                           { body: 'Local variable', correct: true, question: questions[1] },
+                                           { body: 'Class variable', question: questions[1] }
                                          ])
 
 answers_for_third_test = Answer.create!([
-                                          { body: 'Да', question: questions[2] },
-                                          { body: 'Может быть', question: questions[2] },
-                                          { body: 'Скорее нет', question: questions[2] },
-                                          { body: 'Нет', correct: true, question: questions[2] }
+                                          { body: 'Yes', question: questions[2] },
+                                          { body: 'May be', question: questions[2] },
+                                          { body: 'Probably not', question: questions[2] },
+                                          { body: 'Not', correct: true, question: questions[2] }
                                         ])
 
 answers_for_fourth = Answer.create!([
-                                      { body: 'Да', question: questions[3] },
-                                      { body: '1964 год', correct: true, question: questions[3] },
-                                      { body: 'День сурка', question: questions[3] },
-                                      { body: 'Полет на воздушном шаре под водой', question: questions[3] }
+                                      { body: 'Yea', question: questions[3] },
+                                      { body: '1964 year', correct: true, question: questions[3] },
+                                      { body: 'Groundhog day', question: questions[3] },
+                                      { body: 'Hot air balloon flight under water', question: questions[3] }
                                     ])
 
-Result.create!([
+TestPassage.create!([
                  { number_quetions: 1,
                    number_correct_answers: 1,
                    in_progress: true,
