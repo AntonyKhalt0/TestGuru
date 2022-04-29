@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
-class CreateResults < ActiveRecord::Migration[6.0]
+class CreateTestPassages < ActiveRecord::Migration[6.0]
   def change
-    create_table :results do |t|
+    create_table :test_passages do |t|
       t.integer :number_quetions, null: false
       t.integer :number_correct_answers, null: false, default: 0
       t.boolean :in_progress, null: false, default: false

@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :answers
+  root 'tests#index'
   resources :tests do
-    resources :questions, only: [:new, :create]
+    resources :questions, shallow: true, except: :index  do
+      resources :answers, shallow: true
+    end
   end
-  resources :questions, only: [:show, :edit, :update, :destroy]
 end
