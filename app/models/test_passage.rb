@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', foreign_key: 'question_id', optional: true
 
+  THRESHOLD_PASSAGE = 85
+
   before_validation :before_validation_set_question
 
   def completed?
@@ -27,21 +29,18 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count) * 100
   end
 
+  def successful?
+    result_percent >= THRESHOLD_PASSAGE
+  end
+
   private
 
   def before_validation_set_question
-    if self.current_question.nil? && test.present?
-      self.current_question = test.questions.first
-    else
-      self.current_question = next_question
-    end    
+    self.current_question = next_question    
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-
-    (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
@@ -49,6 +48,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    if self.current_question.nil? && test.present?
+      test.questions.first
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 end

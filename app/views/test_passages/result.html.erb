@@ -1,7 +1,7 @@
 <h1>The <%= @test_passage.test.title %> Completed!</h1>
 
 <p>
-  <% if @test_passage.result_percent >= 85 %>
+  <% if @test_passage.successful? %>
     The test is passed! You scored <span style="color: green;"><%= @test_passage.result_percent.round(2) %></span> percent
   <% else %>
     The test failed! You scored <span style="color: red;"><%= @test_passage.result_percent.round(2) %></span> percent
