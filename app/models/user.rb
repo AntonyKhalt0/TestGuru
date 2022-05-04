@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def test_history_by_complexity(complexity)
     tests.public_send(complexity) if %w[simple intermediate difficult].include? complexity
   end
+
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
 end
