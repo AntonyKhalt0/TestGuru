@@ -8,13 +8,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([
-                       { name: Faker::Name.name, email: 'example_1@example.org' },
-                       { name: Faker::Name.name, email: 'example_2@example.org' },
-                       { name: Faker::Name.name, email: 'example_3@example.org' },
-                       { name: Faker::Name.name, email: 'example_4@example.org' },
-                       { name: Faker::Name.name, email: 'example_5@example.org' }
-                     ])
+#users = User.create!([
+#                       { email: 'aaa@example.org' },
+#                       { email: 'bbb@example.org' },
+#                     ])
 
 categories = Category.create!([
                                 { title: 'Programming language' },
@@ -22,21 +19,23 @@ categories = Category.create!([
                                 { title: 'Humorous' }
                               ])
 
+user = User.first
+
 tests = Test.create!([
                        { title: 'Ruby',
                          level: 2,
                          category: categories[0],
-                         author: users[1] },
+                         author: user },
                        { title: 'Java',
                          level: 3,
                          category: categories[0],
-                         author: users[1] },
+                         author: user },
                        { title: 'Extroversion',
                          category: categories[1],
-                         author: users[3] },
+                         author: user },
                        { title: 'Historic',
                          category: categories[2],
-                         author: users[4] }
+                         author: user }
                      ])
 
 questions = Question.create!([
@@ -77,24 +76,16 @@ answers_for_fourth = Answer.create!([
 TestPassage.create!([
                  { correct_questions: 1,
                    in_progress: true,
-                   user: users[0],
+                   user: user,
                    test: tests[0],
                    current_question: questions[0] },
                  { passed: true,
-                   user: users[2],
+                   user: user,
                    test: tests[3],
                    current_question: questions[3] },
                  { correct_questions: 1,
                    passed: true,
-                   user: users[1],
+                   user: user,
                    test: tests[1],
                    current_question: questions[1] },
-                 { in_progress: true,
-                   user: users[3],
-                   test: tests[2],
-                   current_question: questions[2] },
-                 { passed: true,
-                   user: users[4],
-                   test: tests[0],
-                   current_question: questions[0] }
                ])
