@@ -10,8 +10,16 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.email %></b> Guru | 
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </p>
+      <%= flash.now[:notice] = "Привет, #{current_user.first_name} #{current_user.last_name}!" %>
+    <% end %>
+    
     <%= render 'shared/footer' %>
+    <%= render 'shared/flash' %>
+    <%= yield %>
   </body>
 </html>
