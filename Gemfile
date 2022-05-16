@@ -26,7 +26,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'faker', '>= 2.19.0'
 
 gem 'rubocop', '~> 1.27.0'
+
+# Authentication
 gem 'devise', '~> 4.0'
+
+# Localization
+gem 'rails-i18n', '~> 6.0.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
