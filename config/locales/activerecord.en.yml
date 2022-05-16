@@ -4,7 +4,9 @@ en:
       test: "Test"
     attributes:
       test:
-        title: "Title"        
+        title: "Title"    
+        category: "The category"    
     errors:
       messages:
         blank: "can't be blank"
+        required: "must be selected"
