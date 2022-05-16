@@ -1,2 +1,79 @@
 ru:
   hello: "Привет мир"
+
+  helpers:
+    select:
+      prompt: "Выберите категорию"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+        start: "Начать"        
+        show: "Просмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+      test_passage:
+        next: "Дальше"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+  application:
+    welcome: "Добро пожаловать, %{email} Гуру |"
+    logout: "Выйти"
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions_count: "Количество вопросов"
+      actions: "Действия"
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      all_tests: "Все вопросы"
+      successful_html: "<p>Тест успешно пройден! Вы набрали <span style='color: green;'>%{percent}</span> процентов</p>"
+      unsuccessful_html: "<p>Тест не пройден! Вы набрали <span style='color: red;'>%{percent}</span> процентов</p>"
+    show:
+      header: "Прохождение теста по %{title}"
+      questions_number: "Количество вопросов: %{quantity}"
+      question: "Вопрос %{number}"
+  admin:
+    nav:
+      header: "Панель админа TestGuru"
+      welcome: "Добро пожаловать, %{email} Гуру |"
+      logout: "Выйти"
+    tests:
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions_count: "Количество вопросов"
+        actions: "Действия"
+        create_test: "Создать тест"
+      create:
+        success: "Тест успешно создан."
+      new:
+        header: "Создать новый тест"
+      edit:
+        header: "Редактировать %{title} тест"
+      show:
+        header: "Тест %{title}"
+        level: "Уровень %{level}"
+        category: "Категория %{category}"
+        questions: "Вопросы"
+        new_question: "Создать новый вопрос"
+        body: "Вопрос"
+        actions: "Действия"
+        back: "Назад"
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
