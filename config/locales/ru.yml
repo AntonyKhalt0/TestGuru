@@ -47,7 +47,7 @@ ru:
       questions_number: "Количество вопросов: %{quantity}"
       question: "Вопрос %{number}"
     gist:
-      success: "Gist успешно создан!"
+      success: "Gist успешно создан! Ссылка на gist: %{gist_url}"
       alert: "Во время сохранения gist произошла ошибка"
   admin:
     nav:
