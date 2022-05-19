@@ -44,6 +44,9 @@ en:
       header: "Passing the %{title} Test"
       question_number: "Questions number: %{quantity}"
       question: "Question %{number}"
+    gist:
+      success: "Gist was successfully created!"
+      alert: "An error occured while saving gist"
   admin:
     nav:
       header: "TestGuru Admin Panel"
