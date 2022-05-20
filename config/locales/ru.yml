@@ -29,6 +29,9 @@ ru:
   application:
     welcome: "Добро пожаловать, %{email} Гуру |"
     logout: "Выйти"
+  gist_question_service:
+    gist_params:
+      description: "Вопрос теста по %{title} с сайта TestGuru"
   tests:
     index:
       header: "Доступные тесты"
@@ -47,7 +50,7 @@ ru:
       questions_number: "Количество вопросов: %{quantity}"
       question: "Вопрос %{number}"
     gist:
-      success: "Gist успешно создан! Ссылка на gist: %{gist_url}"
+      success: "Gist успешно создан!"
       alert: "Во время сохранения gist произошла ошибка"
   admin:
     nav:
@@ -62,6 +65,7 @@ ru:
         questions_count: "Количество вопросов"
         actions: "Действия"
         create_test: "Создать тест"
+        show_gists: "Показать gist'ы"
       create:
         success: "Тест успешно создан."
       new:
@@ -77,6 +81,13 @@ ru:
         body: "Вопрос"
         actions: "Действия"
         back: "Назад"
+    gists:
+      index:
+        header: "Пользовательские gists"
+        question: "Вопрос"
+        gist_url: "Ссылка на gist"
+        user_email: "Email пользователя"
+        back: "Все тесты"
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
