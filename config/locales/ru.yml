@@ -49,7 +49,8 @@ ru:
       header: "Прохождение теста по %{title}"
       questions_number: "Количество вопросов: %{quantity}"
       question: "Вопрос %{number}"
-    gist:
+  gists:
+    create:
       success: "Gist успешно создан!"
       alert: "Во время сохранения gist произошла ошибка"
   admin:

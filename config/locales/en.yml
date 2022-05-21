@@ -47,7 +47,8 @@ en:
       header: "Passing the %{title} Test"
       question_number: "Questions number: %{quantity}"
       question: "Question %{number}"
-    gist:
+  gists:
+    create:
       success: "Gist was successfully created!"
       alert: "An error occured while saving gist"
   admin:
