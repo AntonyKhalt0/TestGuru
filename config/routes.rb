@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+
+    resources :gists, only: :create
   end
 
   namespace :admin do
@@ -24,5 +26,6 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :gists, only: :index
   end
 end
