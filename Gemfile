@@ -29,6 +29,7 @@ gem 'rubocop', '~> 1.27.0'
 
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 #Networking
 #gem 'faraday'
