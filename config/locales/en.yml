@@ -47,6 +47,7 @@ en:
       header: "Passing the %{title} Test"
       question_number: "Questions number: %{quantity}"
       question: "Question %{number}"
+      progress: "Progress: "
   gists:
     create:
       success: "Gist was successfully created!"
@@ -80,6 +81,8 @@ en:
         body: "Body"
         actions: "Actions"
         back: "Back"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Users gists"

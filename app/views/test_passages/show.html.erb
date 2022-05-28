@@ -8,6 +8,12 @@
   <%= t('.question', number: @test_passage.number_of_question) %>
 </p>
 
+<div class="progress">
+  <div class="progress-bar bg-success" id="progress-bar" data-progress="<%= @test_passage.progress_percent %>" style="width: <%= @test_passage.previous_progress_percent %>%" aria-valuemax="100">
+    <%#= @test_passage.progress_percent %>
+  </div>
+</div>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>

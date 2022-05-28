@@ -49,6 +49,7 @@ ru:
       header: "Прохождение теста по %{title}"
       questions_number: "Количество вопросов: %{quantity}"
       question: "Вопрос %{number}"
+      progress: "Прогресс: "
   gists:
     create:
       success: "Gist успешно создан!"
@@ -82,6 +83,8 @@ ru:
         body: "Вопрос"
         actions: "Действия"
         back: "Назад"
+      form_inline:
+        submit: "Принять"
     gists:
       index:
         header: "Пользовательские gists"

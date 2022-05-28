@@ -17,4 +17,5 @@
     <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </table>
 
+<%= link_to t('helpers.submit.test.edit'), edit_admin_test_path(@test) %>
 <%= link_to t('.back'), admin_tests_path %>
