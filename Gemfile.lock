@@ -289,7 +289,7 @@ DEPENDENCIES
   octokit
   pg (= 1.2.3)
   puma (~> 4.1)
-  rails (~> 6.0.4, >= 6.0.4.7)
+  rails (~> 6.0.5)
   rails-i18n (~> 6.0.0)
   rubocop (~> 1.27.0)
   sass-rails (>= 6)
