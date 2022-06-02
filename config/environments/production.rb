@@ -66,8 +66,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://best-test-guru.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.rambler.ru',
-    port:                 993, 
+    tls:                  true,
+    address:              'smtp.yandex.ru',
+    port:                 465,
+    domain:               'yandex.ru', 
     user_name:            ENV['SMTP_USERNAME'],
     password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
