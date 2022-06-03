@@ -66,14 +66,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://best-test-guru.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :tls =>               true,
-    address:              'smtp.yandex.ru',
-    port:                 465,
-    domain:               'yandex.ru', 
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'],
-    authentication:       'plain',
-    enable_starttls_auto: true }
+    port: 587,
+    address: 'smtp.mailgun.org',
+    domain: 'sandbox47f5b90de09d45ea963081b6f9970b34.mailgun.org',
+    user_name: 'ad44inych@sandbox47f5b90de09d45ea963081b6f9970b34.mailgun.org',
+    password: 'ad44in12345',
+    authentication: :plain }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
