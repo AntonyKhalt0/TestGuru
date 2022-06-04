@@ -63,15 +63,15 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "TestGuru_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'https://best-test-guru.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' } #'https://best-test-guru.herokuapp.com'
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     tls:                  true,
     port:                 465,
     address:              'smtp.yandex.ru',
     domain:               'yandex.ru',
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'],
+    user_name:            'ad44inych@yandex.ru',#ENV['SMTP_USERNAME'],
+    password:             'zivqwitncippqkdd',#ENV['SMTP_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
