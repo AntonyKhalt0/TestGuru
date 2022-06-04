@@ -1,5 +1,19 @@
-<p>Welcome <%= @email %>!</p>
+<h3 class="text-center">USER AUTHORIZATION INSTRUCTION</h3>
+<br>
+<div class="box3">
+  <p>Вот краткая <strong> ИНСТРУКЦИЯ </strong>по авторизации</p>
+</div>                 
 
-<p>You can confirm your account email through the link below:</p>
+<p>Welcome (Добро пожаловать) <%= @email %>!</p>
+
+<p>You can confirm your account email through the link below</p>
+
+<p>(Вы должны подтвердить ваш аккаунт, перейдя по ссылке ниже):</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>With the deepest respect, always your development team of the best application to create and pass tests :)</p>
+
+<p>С глубочайшим уважением, всегда ваша команда разработчиков лучшего приложения для создания и прохождения тестов TestGuru :)</p>
+
+<h4>2022 год</h4>
