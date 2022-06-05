@@ -50,6 +50,7 @@ ru:
       questions_number: "Количество вопросов: %{quantity}"
       question: "Вопрос %{number}"
       progress: "Прогресс: "
+      gist_question: "Сохранить gist вопроса"
   gists:
     create:
       success: "Gist успешно создан!"
@@ -85,6 +86,43 @@ ru:
         back: "Назад"
       form_inline:
         submit: "Принять"
+    questions:
+      show:
+        question: "Вопрос"
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+        edit_question: "Редактировать вопрос"
+        back: "Назад"
+      new:
+        back: "Назад"
+      edit:
+        back: "Назад"
+      question:
+        show_question: "Просмотреть вопрос"
+        edit_question: "Редактировать вопрос"
+        delete_question: "Удалить вопрос"
+      form:
+        body: "Вопрос"
+    answers:
+      show:
+        question: "Вопрос"
+        answer: "Ответ:"
+        correct: "Правильный:"
+        back: "Назад"
+      new:
+        new_answer: "Новый ответ"
+        back: "Назад"
+      edit:
+        edit: "Редактирование Ответа"
+        show: "Просмотреть"
+        back: "Назад"
+      form: 
+        body: "Ответ"
+        correct: "Правильный"
+      answer:
+        show: "Просмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
     gists:
       index:
         header: "Пользовательские gists"
@@ -92,6 +130,58 @@ ru:
         gist_url: "Ссылка на gist"
         user_email: "Email пользователя"
         back: "Все тесты"
+  feedbacks:
+    new:
+      feedback: "Новый фидбэк"
+      back: "Назад"
+    form:
+      author: "Автор"
+      body: "Текст"
+      send: "Отправить"
+      prohibited: "запретил сохранение этой обратной связи: "
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+  devise:
+    confirmations:
+      new:
+        resend: "Повторно отправить инструкции по подтверждению"
+        email: "Email"
+    registrations:
+      new:
+        email: "Email"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        sign_up: "Зарегистрироваться"
+      edit:
+        edit: "Редактировать"
+        email: "Email"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"  
+        currently_waiting: "В настоящее время ожидает подтверждения для: "
+        leave_blank: "(оставьте поле пустым, если вы не хотите его изменять) "
+        characters_minimum: "символов минимум"
+        current_password: "Текущий пароль"
+        confirm_current_password: "нам нужен ваш текущий пароль для подтверждения внесенных изменений"  
+        submit: "Обновить"
+        cancel: "Аннулировать мою учетную запись"
+        unhappy: "Неудачно?"
+        back: "Назад"
+    sessions:
+      new:
+        hello: "Привет! Выполните вход в Test Guru"
+        email: "Email"
+        enter_email: "Введите email"
+        password: "Пароль"
+        remember_me: "Запомнить меня"
+        enter: "Войти"
+    shared:
+      links:
+        forgot: "Забыли ваш пароль?"
+        confirm_email: "Не получил инструкции по подтверждению?"
+        unlock_email: "Не получил инструкции по разблокировке?"
+        omniauthable: "Войти в систему с помощью %{omni}"

@@ -48,10 +48,20 @@ en:
       question_number: "Questions number: %{quantity}"
       question: "Question %{number}"
       progress: "Progress: "
+      gist_question: "Gist question"
   gists:
     create:
       success: "Gist was successfully created!"
       alert: "An error occured while saving gist"
+  feedbacks:
+    new:
+      feedback: "New Feedback"
+      back: "Back"
+    form:
+      author: "Author"
+      body: "Body"
+      send: "Send"
+      prohibited: "prohibited this feedback from being saved: "
   admin:
     nav:
       header: "TestGuru Admin Panel"
@@ -83,6 +93,43 @@ en:
         back: "Back"
       form_inline:
         submit: "OK"
+    questions:
+      show:
+        question: "Question"
+        answers: "Answers"
+        new_answer: "New answer"
+        edit_question: "Edit question"
+        back: "Back"
+      new:
+        back: "Back"
+      edit:
+        back: "Back"
+      question:
+        show_question: "Show question"
+        edit_question: "Edit question"
+        delete_question: "Delete question"
+      form:
+        body: "Body"
+    answers:
+      show:
+        question: "Question"
+        answer: "Answer:"
+        correct: "Correct:"
+        back: "Back"
+      new:
+        new_answer: "New answer"
+        back: "Back"
+      edit:
+        edit: "Editing Answer"
+        show: "Show"
+        back: "Back"
+      form: 
+        body: "Body"
+        correct: "Correct"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
     gists:
       index:
         header: "Users gists"
@@ -93,3 +140,46 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+  devise:
+    confirmations:
+      new:
+        resend: "Resend confirmation instructions"
+        email: "Email"
+    registrations:
+      new:
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+        password_confirmation: "Password confirmation"  
+        sign_up: "Sign up"
+      edit:
+        edit: "Edit"
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        password: "Password"
+        password_confirmation: "Password confirmation"  
+        currently_waiting: "Currently waiting confirmation for: "
+        leave_blank: "(leave blank if you don't want to change it) "
+        characters_minimum: "characters minimum"
+        current_password: "Current password"
+        confirm_current_password: "we need your current password to confirm your changes"  
+        submit: "Update"
+        cancel: "Cancel my account"
+        unhappy: "Unhappy?"
+        back: "Back"
+    sessions:
+      new:
+        hello: "Hello! Enter the Guru Gates"
+        email: "Email"
+        enter_email: "Enter email"
+        password: "Password"
+        remember_me: "Remember me"
+        enter: "Enter"
+    shared:
+      links:
+        forgot: "Forgot your password?"
+        confirm_email: "Didn't receive confirmation instructions?"
+        unlock_email: "Didn't receive unlock instructions?"
+        omniauthable: "Sign in with %{omni}"
