@@ -114,6 +114,7 @@ en:
         delete_question: "Delete question"
       form:
         body: "Body"
+        create_question: "Create question"
     answers:
       show:
         question: "Question"

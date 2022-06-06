@@ -107,6 +107,7 @@ ru:
         delete_question: "Удалить вопрос"
       form:
         body: "Вопрос"
+        create_question: "Создать вопрос"
     answers:
       show:
         question: "Вопрос"

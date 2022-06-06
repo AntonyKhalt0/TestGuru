@@ -8,7 +8,7 @@
 
 <h4><%= t('.questions') %></h4>
 <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
-<table>
+<table class="table">
     <tr>
       <th>Id</th>
       <th><%= t('.body') %></th>
@@ -17,5 +17,5 @@
     <%= render partial: 'admin/questions/question', collection: @test.questions %>
 </table>
 
-<%= link_to t('helpers.submit.test.edit'), edit_admin_test_path(@test) %>
+<%= link_to t('helpers.submit.test.edit'), edit_admin_test_path(@test) %> </br> 
 <%= link_to t('.back'), admin_tests_path %>
