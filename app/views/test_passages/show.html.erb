@@ -1,29 +1,31 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="progress-bar-page">
+  <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<p>
-  <%= t('.questions_number', quantity: @test_passage.test.questions.count) %>
-</p>
-
-<p>
-  <%= t('.question', number: @test_passage.number_of_question) %>
-</p>
-
-<div class="progress">
-  <div class="progress-bar bg-success" id="progress-bar" data-progress="<%= @test_passage.progress_percent %>" style="width: <%= @test_passage.previous_progress_percent %>%" aria-valuemax="100">
-  </div>
-</div>
-
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
-
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|  %>
   <p>
-    <%= b.check_box id: "#answer_ids_#{b.object.id}" %>
-    <%= b.label %>
+    <%= t('.questions_number', quantity: @test_passage.test.questions.count) %>
   </p>
-  <% end%>
-  <p><%= link_to t('.gist_question'), test_passage_gists_path(@test_passage), method: :post %></p>
-  <p><%= form.submit t('helpers.submit.test_passage.next') %></p>
-<% end %>
+
+  <p>
+    <%= t('.question', number: @test_passage.number_of_question) %>
+  </p>
+
+  <div class="progress">
+    <div class="progress-bar bg-success" id="progress-bar" data-progress="<%= @test_passage.progress_percent %>" style="width: <%= @test_passage.previous_progress_percent %>%" aria-valuemax="100">
+    </div>
+  </div>
+
+  <b>
+    <%= @test_passage.current_question.body %>
+  </b>
+
+  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b|  %>
+    <p>
+      <%= b.check_box id: "#answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+    <% end%>
+    <p><%= link_to t('.gist_question'), test_passage_gists_path(@test_passage), method: :post %></p>
+    <p><%= form.submit t('helpers.submit.test_passage.next') %></p>
+  <% end %>
+</div>
