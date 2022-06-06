@@ -1,34 +1,37 @@
-class Admin::AnswersController < Admin::BaseController
-  before_action :set_question, only: %i[ new create ]
-  before_action :set_answer, only: %i[ show edit update destroy ]
+# frozen_string_literal: true
 
-  def new
-    @answer = @question.answers.build
-  end
+module Admin
+  class AnswersController < Admin::BaseController
+    before_action :set_question, only: %i[new create]
+    before_action :set_answer, only: %i[show edit update destroy]
 
-  def create
-    @answer = @question.answers.build(answer_params)
-    if @answer.save
-      redirect_to admin_answer_path(@answer)
-    else
-      render :new
+    def new
+      @answer = @question.answers.build
     end
-  end
 
-  def update
-    if @answer.update(answer_params)
-      redirect_to admin_question_path(@question)
-    else
-      redirect_to :edit
+    def create
+      @answer = @question.answers.build(answer_params)
+      if @answer.save
+        redirect_to admin_answer_path(@answer)
+      else
+        render :new
+      end
     end
-  end
 
-  def destroy
-    @answer.destroy
-    redirect_to admin_question_path(@answer.question)
-  end
+    def update
+      if @answer.update(answer_params)
+        redirect_to admin_question_path(@question)
+      else
+        redirect_to :edit
+      end
+    end
 
-  private
+    def destroy
+      @answer.destroy
+      redirect_to admin_question_path(@answer.question)
+    end
+
+    private
 
     def set_question
       @question = Question.find(params[:question_id])
@@ -39,6 +42,7 @@ class Admin::AnswersController < Admin::BaseController
     end
 
     def answer_params
-      params.require(:answer).permit(:body, :correct) 
+      params.require(:answer).permit(:body, :correct)
     end
+  end
 end

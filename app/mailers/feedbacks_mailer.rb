@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeedbacksMailer < ApplicationMailer
   default to: -> { Admin.pluck(:email) }
 

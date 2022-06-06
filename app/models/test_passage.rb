@@ -14,15 +14,13 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
 
   def number_of_question
-    test.questions.index(current_question).next 
+    test.questions.index(current_question).next
   end
 
   def progress_percent
@@ -44,7 +42,7 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_question
-    self.current_question = next_question    
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
@@ -56,7 +54,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if self.current_question.nil? && test.present?
+    if current_question.nil? && test.present?
       test.questions.first
     else
       test.questions.order(:id).where('id > ?', current_question.id).first

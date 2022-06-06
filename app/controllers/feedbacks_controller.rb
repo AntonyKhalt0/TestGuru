@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeedbacksController < ApplicationController
   def new
     @feedback = Feedback.new
@@ -16,7 +18,7 @@ class FeedbacksController < ApplicationController
 
   private
 
-    def feedback_params
-      params.require(:feedback).permit(:author, :body)
-    end
+  def feedback_params
+    params.require(:feedback).permit(:author, :body)
+  end
 end

@@ -8,7 +8,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#users = User.create!([
+# users = User.create!([
 #                       { email: 'aaa@example.org' },
 #                       { email: 'bbb@example.org' },
 #                     ])
@@ -74,18 +74,18 @@ answers_for_fourth = Answer.create!([
                                     ])
 
 TestPassage.create!([
-                 { correct_questions: 1,
-                   in_progress: true,
-                   user: user,
-                   test: tests[0],
-                   current_question: questions[0] },
-                 { passed: true,
-                   user: user,
-                   test: tests[3],
-                   current_question: questions[3] },
-                 { correct_questions: 1,
-                   passed: true,
-                   user: user,
-                   test: tests[1],
-                   current_question: questions[1] },
-               ])
+                      { correct_questions: 1,
+                        in_progress: true,
+                        user: user,
+                        test: tests[0],
+                        current_question: questions[0] },
+                      { passed: true,
+                        user: user,
+                        test: tests[3],
+                        current_question: questions[3] },
+                      { correct_questions: 1,
+                        passed: true,
+                        user: user,
+                        test: tests[1],
+                        current_question: questions[1] }
+                    ])

@@ -38,17 +38,17 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-#  config.action_mailer.delivery_method = :letter_opener
+  #  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    tls:                  true,
-    port:                 465,
-    address:              'smtp.yandex.ru',
-    domain:               'yandex.ru',
-    user_name:            'ad44inych@yandex.ru',#ENV['SMTP_USERNAME'],
-    password:             'zivqwitncippqkdd', #'aldztmhqhngllyra' ,#ENV['SMTP_PASSWORD'],
-    authentication:       'plain',
+    tls: true,
+    port: 465,
+    address: 'smtp.yandex.ru',
+    domain: 'yandex.ru',
+    user_name: 'ad44inych@yandex.ru', # ENV['SMTP_USERNAME'],
+    password: 'zivqwitncippqkdd', # 'aldztmhqhngllyra' ,#ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 
