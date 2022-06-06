@@ -24,6 +24,10 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      login: "Log in"
+      signup: "Sign up"
+      hello: "Hello, %{first_name} %{last_name}!"
   application:
     welcome: "Welcome, %{email} Guru |"
     logout: "Logout"
@@ -51,7 +55,7 @@ en:
       gist_question: "Gist question"
   gists:
     create:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! Link to gist: "
       alert: "An error occured while saving gist"
   feedbacks:
     new:

@@ -4,8 +4,8 @@ class GistsController < ApplicationController
     @result = GistQuestionService.new(@test_passage.current_question).call
 
     if @result.success?
-      create_gist
-      flash[:notice] = "#{t('.success')} #{view_context.link_to('Link to gist', @result.url, target: '_blank')}"
+      create_gist 
+      flash[:notice] = "#{t('.success')} #{@result.url}" 
     else
       flash[:alert] = t('.failure')
     end
