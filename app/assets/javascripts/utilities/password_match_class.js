@@ -5,17 +5,36 @@ class PasswordMatch {
   }
 
   passwordsDefinition (password, password_confirmation) {
-    let match = this.page.querySelector('.octicon-check');
-    let noMatch = this.page.querySelector('.octicon-circle-slash');
-    this.page.addEventListener('input', function () {
-      if (password.value != password_confirmation.value && password.value) {
-        match.classList.add('hide');
-        noMatch.classList.remove('hide');
-      } else if (password.value == password_confirmation.value && password.value) {
-        match.classList.remove('hide');
-        noMatch.classList.add('hide');
+    let passwordLabel = this.page.querySelector('.password-label');
+    let passwordConfirmationLabel = this.page.querySelector('.password-confirmation-label');
+    let passwordMatch = passwordLabel.querySelector('.octicon-check');
+    let passwordNoMatch = passwordLabel.querySelector('.octicon-circle-slash');
+    let passwordConfirmMatch = passwordConfirmationLabel.querySelector('.octicon-check');
+    let passwordConfirmNoMatch = passwordConfirmationLabel.querySelector('.octicon-circle-slash');
+    passwordLabel.addEventListener('input', function () {
+      if (password.value) {
+        if (password.value != password_confirmation.value) {
+          passwordMatch.classList.add('hide');
+          passwordNoMatch.classList.remove('hide');
+        } else if (password.value == password_confirmation.value) {
+          passwordMatch.classList.remove('hide');
+          passwordNoMatch.classList.add('hide');
+        }  
+      }  
+    })
+    passwordConfirmationLabel.addEventListener('input', function () {
+      if (password.value) {
+        if (password.value != password_confirmation.value) {
+          passwordConfirmMatch.classList.add('hide');
+          passwordConfirmNoMatch.classList.remove('hide');
+        } else if (password.value == password_confirmation.value) {
+          passwordConfirmMatch.classList.remove('hide');
+          passwordConfirmNoMatch.classList.add('hide');
+          passwordMatch.classList.remove('hide');
+          passwordNoMatch.classList.add('hide');
+        } 
       }
-    });    
+    }) 
   }
 }
 

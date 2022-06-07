@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 module QuestionsHelper
-  GIT_URL = 'https://github.com'.freeze
+  GIT_URL = 'https://github.com'
 
   def question_header(test, action)
     case action
-    when "create"
+    when 'create'
       "Create New #{test.title} Question"
-    when "edit"
+    when 'edit'
       "Edit #{test.title} Question"
     else
-      "Unknown action"
+      'Unknown action'
     end
   end
 
@@ -18,6 +20,6 @@ module QuestionsHelper
 
   def github_url(author, repo)
     url = "#{GIT_URL}/#{author}/#{repo}".freeze
-    link_to("Test Guru", url, html_options = { target: '_blank', rel: 'nofollow noopener' })
+    link_to('Test Guru', url, html_options = { target: '_blank', rel: 'nofollow noopener' })
   end
 end

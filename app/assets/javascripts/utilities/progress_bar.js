@@ -1,6 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  let control = document.querySelector('.container');
-  //console.log(control);
+  let control = document.querySelector('.progress-bar-page');
 
   if (control) { control.addEventListener('input', showProgress); }
 })

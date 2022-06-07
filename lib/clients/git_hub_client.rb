@@ -1,4 +1,6 @@
-class GitHubClient  
+# frozen_string_literal: true
+
+class GitHubClient
   def initialize
     @http_client = setup_http_client
   end
@@ -9,6 +11,5 @@ class GitHubClient
 
   private
 
-  def setup_http_client
-  end
+  def setup_http_client; end
 end

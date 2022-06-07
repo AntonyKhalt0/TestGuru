@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def after_sign_in_path_for(resource) 
+  def after_sign_in_path_for(resource)
     if resource.is_a?(Admin)
-      admin_tests_path 
+      admin_tests_path
     else
       root_path
     end

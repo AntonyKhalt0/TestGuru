@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  devise :database_authenticatable, 
+  devise :database_authenticatable,
          :registerable,
-         :recoverable, 
+         :recoverable,
          :rememberable,
-         :trackable, 
+         :trackable,
          :validatable,
          :confirmable
 
@@ -23,5 +23,4 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
-
 end

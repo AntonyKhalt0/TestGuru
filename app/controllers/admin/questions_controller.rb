@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Admin::QuestionsController < Admin::BaseController
-  before_action :set_test, only: [:new, :create]
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_test, only: %i[new create]
+  before_action :set_question, only: %i[show edit update destroy]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def new
@@ -13,7 +15,7 @@ class Admin::QuestionsController < Admin::BaseController
 
     if @question.save
       redirect_to admin_test_path(@question.test)
-    else 
+    else
       render :new
     end
   end
@@ -21,7 +23,7 @@ class Admin::QuestionsController < Admin::BaseController
   def update
     if @question.update(question_params)
       redirect_to admin_test_path(@question.test)
-    else 
+    else
       render :show
     end
   end
@@ -46,6 +48,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_found
-    render plain: "Question not found, sorry!"
+    render plain: 'Question not found, sorry!'
   end
 end

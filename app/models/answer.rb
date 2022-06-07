@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Answer < ApplicationRecord
   MAX_COUNT_ANSWERS = 4
 
@@ -13,7 +15,7 @@ class Answer < ApplicationRecord
   def validate_number_answers
     if question.answers.count >= MAX_COUNT_ANSWERS
       errors.add(:question,
-                  message: 'The number of responses does not correspond to reality')
+                 message: 'The number of responses does not correspond to reality')
     end
   end
 end

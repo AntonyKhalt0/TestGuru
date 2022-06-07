@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationMailer < ActionMailer::Base
-  default from: %{"Test Guru" <mail@testguru.com>}
+  default from: 'ad44inych@yandex.ru' # {}%{"Test Guru" <mail@testguru.com>}
   layout 'mailer'
 end
