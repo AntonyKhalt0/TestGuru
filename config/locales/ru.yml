@@ -59,6 +59,12 @@ ru:
     create:
       success: "Gist успешно создан! Ссылка на gist: "
       alert: "Во время сохранения gist произошла ошибка"
+  badges:
+    index:
+      badges: "Бейджи"
+      badge: "Бейдж"
+      name: "Название"
+      back: "Назад"
   admin:
     nav:
       header: "Панель админа TestGuru"
@@ -135,6 +141,38 @@ ru:
         gist_url: "Ссылка на gist"
         user_email: "Email пользователя"
         back: "Все тесты"
+    badges:
+      index:
+        badges: "Бейджи"
+        badge: "Бейдж"
+        name: "Название"
+        actions: "Действия"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        new_badge: "Новый бейдж"
+        back: "Назад"
+        sure: "Вы уверены?"
+      new:
+        new_badge: "Новый бейдж"
+        back: "Назад"
+      edit:
+        edit_badge: "Редактирование бейджа"
+        show: "Показать"
+        back: "Назад"
+      show:
+        name: "Название:"
+        img_url: "url картинки:"
+        rule: "Правило:"
+        edit: "Редактировать"
+        back: "Назад"
+      form:
+        prohibited: " запретил сохранение этого бейджа:"
+        name: "Название"
+        img_url: "url картинки:"
+        select_rule: "Выберите правило бейджа"
+        rule: "Правило:"
+        rule_options: "Опции правила:"
   feedbacks:
     new:
       feedback: "Новый фидбэк"
