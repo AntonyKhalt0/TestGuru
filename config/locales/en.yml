@@ -66,6 +66,12 @@ en:
       body: "Body"
       send: "Send"
       prohibited: "prohibited this feedback from being saved: "
+  badges:
+    index:
+      badges: "Badges"
+      badge: "Badge"
+      name: "Name"
+      back: "Back"
   admin:
     nav:
       header: "TestGuru Admin Panel"
@@ -142,6 +148,38 @@ en:
         gist_url: "Link to gist"
         user_email: "User Email"
         back: "All tests"
+    badges:
+      index:
+        badges: "Badges"
+        badge: "Badge"
+        name: "Name"
+        actions: "Actions"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        new_badge: "New badge"
+        back: "Back"
+        sure: "Are you sure?"
+      new:
+        new_badge: "New badge"
+        back: "Back"
+      edit:
+        edit_badge: "Editing badge"
+        show: "Show"
+        back: "Back"
+      show:
+        name: "Name:"
+        img_url: "Image url:"
+        rule: "Rule:"
+        edit: "Edit"
+        back: "Back"
+      form:
+        prohibited: " prohibited this badge from being saved:"
+        name: "Name"
+        img_url: "Image url:"
+        select_rule: "Select badge rule"
+        rule: "Rule:"
+        rule_options: "Rule options:"
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"

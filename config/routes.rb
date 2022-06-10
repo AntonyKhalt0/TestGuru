@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  
   root 'tests#index'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
-  resources :feedbacks, only: %i[new create], shallow: true
+  resources :badges, only: :index
 
+  resources :feedbacks, only: %i[new create], shallow: true
+  
   resources :tests, only: :index do
     member do
       post :start
@@ -29,6 +32,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :badges, only: %i[index show new create edit update destroy]
     resources :gists, only: :index
   end
 end
