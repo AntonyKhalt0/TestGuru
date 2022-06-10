@@ -53,6 +53,7 @@ en:
       question: "Question %{number}"
       progress: "Progress: "
       gist_question: "Gist question"
+      passage_time: "Passage time: "
   gists:
     create:
       success: "Gist was successfully created! Link to gist: "
@@ -86,6 +87,7 @@ en:
         actions: "Actions"
         create_test: "Create test"
         show_gists: "Show gists"
+        check_bages: "Check bages"
       create:
         success: "Test was successfully created."
       new:
@@ -104,10 +106,18 @@ en:
         back: "Back"
       form_inline:
         submit: "OK"
+      form:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        passage_time: "Passage time"
+        back: "Back"
     questions:
       show:
         question: "Question"
         answers: "Answers"
+        answer: "Answer"
+        actions: "Actions"
         new_answer: "New answer"
         edit_question: "Edit question"
         back: "Back"

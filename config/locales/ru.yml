@@ -55,6 +55,7 @@ ru:
       question: "Вопрос %{number}"
       progress: "Прогресс: "
       gist_question: "Сохранить gist вопроса"
+      passage_time: "Время прохождения: "
   gists:
     create:
       success: "Gist успешно создан! Ссылка на gist: "
@@ -79,6 +80,7 @@ ru:
         actions: "Действия"
         create_test: "Создать тест"
         show_gists: "Показать gist'ы"
+        check_bages: "Просмотреть бейджи"
       create:
         success: "Тест успешно создан."
       new:
@@ -97,10 +99,18 @@ ru:
         back: "Назад"
       form_inline:
         submit: "Принять"
+      form:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        time: "Время прохождения"
+        back: "Назад"
     questions:
       show:
         question: "Вопрос"
         answers: "Ответы"
+        answer: "Ответ"
+        actions: "Действия"
         new_answer: "Новый ответ"
         edit_question: "Редактировать вопрос"
         back: "Назад"

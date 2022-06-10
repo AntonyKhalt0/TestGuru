@@ -1,7 +1,11 @@
 <div class="progress-bar-page">
   <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-  <p class="timer" data-timer="<%= @test_passage.test_finish.to_datetime %>"></p>
+  <p>
+    <%= t('.passage_time') %>
+    <p class="timer" data-timer="<%= @test_passage.test_finish.to_datetime %>"></p>
+  </p>
+
 
   <p>
     <%= t('.questions_number', quantity: @test_passage.test.questions.count) %>
