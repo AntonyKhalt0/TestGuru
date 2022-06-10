@@ -19,6 +19,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def test_finish
+    created_at + test.time.minutes
+  end
+
   def number_of_question
     test.questions.index(current_question).next
   end

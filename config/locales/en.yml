@@ -96,6 +96,7 @@ en:
         header: "Test %{title}"
         level: "Level %{level}"
         category: "Category %{category}"
+        time: "Passage time: %{time}"
         questions: "Questions"
         new_question: "Create new question"
         body: "Body"

@@ -89,6 +89,7 @@ ru:
         header: "Тест %{title}"
         level: "Уровень %{level}"
         category: "Категория %{category}"
+        time: "Время прохождения: %{time} минута"
         questions: "Вопросы"
         new_question: "Создать новый вопрос"
         body: "Вопрос"
