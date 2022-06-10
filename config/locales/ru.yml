@@ -103,7 +103,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
-        time: "Время прохождения"
+        passage_time: "Время прохождения"
         back: "Назад"
     questions:
       show:
