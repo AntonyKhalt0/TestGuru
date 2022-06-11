@@ -17,8 +17,8 @@ document.addEventListener('turbolinks:load', function() {
         const form = document.querySelector('.test-passage-form');
         const passageId = form.dataset.testPassageId;
         
-        alert("Time is out!")
-        document.location.href = `https://best-test-guru.herokuapp.com/test_passages/${passageId}/result`
+        alert("Time is up!");
+        form.submit();
       } else {
         let strTimer = `${minutes}:${seconds}`;
         allTime.innerHTML = strTimer;
