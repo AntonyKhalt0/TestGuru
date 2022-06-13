@@ -14,9 +14,19 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
+    current_question = nil if time_is_up?
+
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
+  end
+
+  def test_finish
+    created_at + test.time.minutes
+  end
+
+  def time_is_up?
+    Time.now >= test_finish
   end
 
   def number_of_question

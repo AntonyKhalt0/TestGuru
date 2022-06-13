@@ -5,6 +5,9 @@
 <p>
   <%= t('.category', category: @test.category.title) %>
 </p>
+<p>
+  <%= t('.time', time: @test.time) %>
+</p>
 
 <h4><%= t('.questions') %></h4>
 <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
