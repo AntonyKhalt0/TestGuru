@@ -1,3 +1,5 @@
+This is an educational application for passing tests
+
 # README
 
 Сущности для проекта:
